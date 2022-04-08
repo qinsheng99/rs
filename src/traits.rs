@@ -1,3 +1,4 @@
+//定义一个实现area的trait
 pub trait HH {
     fn area(&self) -> f64;
 }
@@ -8,10 +9,19 @@ pub struct Circle {
     pub radius: f64,
 }
 
-impl HH for Circle {
+impl HH for Circle {//定义结构体实现area
     fn area(&self) -> f64 {
         std::f64::consts::PI * (self.radius * self.radius)
     }
+}
+
+pub fn trais_demo() {
+    let c = Circle {
+        x: 0.0f64,
+        y: 0.0f64,
+        radius: 1.0f64,
+    };
+    println!("circle c has an area of {}", c.area());
 }
 
 trait Foo {
@@ -67,3 +77,21 @@ impl<T: Add<T, Output = T>> Add for Point1<T> {
         }
     }
 }
+
+// trait Foo { fn method(&self) -> String; }
+
+// impl Foo for u8 { fn method(&self) -> String { format!("u8: {}", *self) } }
+// impl Foo for String { fn method(&self) -> String { format!("string: {}", *self) } }
+
+// use std::ops::Add;
+
+// fn add<T: Add<T, Output=T>>(a:T, b:T) -> T {
+//     a + b
+// }
+
+// let x = "Hello".to_string();
+//     println!("x--{}", x.method());
+//     let y = 8u8;
+//     println!("y--{}", y.method());
+
+//     println!("5 + 6 = {}", add(5, 6));
