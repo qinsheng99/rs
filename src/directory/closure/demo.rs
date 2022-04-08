@@ -10,3 +10,24 @@ pub fn closure_1() {
 
     println!("{:?}", takes_nums());
 }
+
+pub fn closure_2(){
+
+    let mut num = 5;
+    {
+        let mut add_num = |x: i32| num += x;
+    
+        add_num(5);
+    }
+    println!("num = {}", num)
+}
+
+pub fn closure_3(){
+
+    let mut num = 5;
+    {
+        let mut add_num = move |x: i32| num += x;
+        add_num(4);
+    }
+    println!("num = {}", num)
+}

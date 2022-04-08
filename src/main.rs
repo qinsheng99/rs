@@ -14,6 +14,8 @@ fn main() {
     traits::trais_demo();
     closure::demo::plus_one();
     closure::demo::closure_1();
+    closure::demo::closure_2();
+    closure::demo::closure_3();
 }
 
 
