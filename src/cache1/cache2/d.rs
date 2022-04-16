@@ -37,3 +37,25 @@ pub fn mth() {
         _ => {}
     }
 }
+
+
+    pub fn f(n:i32) ->fn(i32) ->i32 {
+        fn inc(n: i32) -> i32 {
+            n + 1
+        }
+        fn dec(n: i32) -> i32 {
+            n - 1
+        }
+        if n % 2 == 0 {
+            inc
+        } else {
+            dec
+        }
+    }
+
+
+pub fn inc(n: i32) -> i32 {//函数定义
+    n + 1
+}
+
+pub type IncType = fn(i32) -> i32;//函数类型

@@ -3,8 +3,10 @@ mod cache1;
 mod english;
 mod traits;
 mod directory;
+mod demof;
 // use std::io::Write;
 use cache1::cache2::d;
+use demof::demo::demo::demofs;
 use directory::{life_cycle, closure};
 fn main() {
     d::dd();
@@ -16,6 +18,7 @@ fn main() {
     closure::demo::closure_1();
     closure::demo::closure_2();
     closure::demo::closure_3();
+    demofs::demo1()
 }
 
 
