@@ -6,7 +6,7 @@ mod japanese {
     mod farewells {
     }
 }
-
+#[allow(dead_code)]
 fn five(){}
 pub mod first {
     pub mod second {
@@ -19,13 +19,13 @@ pub mod first {
         super::five();
     }
 }
-
+#[allow(dead_code)]
 pub fn forth(){
     crate::first::second::third();
 }
 
 use crate::first::second;
-
+#[allow(dead_code)]
 pub fn seven() {
     second::third();
 }

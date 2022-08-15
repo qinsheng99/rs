@@ -1,12 +1,12 @@
 pub mod demofs {
     use std::collections::HashMap;
-
+    #[allow(dead_code)]
     pub fn demo1() {
         let _tt : (f32,u8,u32) = (3.14,34,56);
         let x :u64 = 16;
         println!("{}",x)
     }
-
+    #[allow(dead_code)]
     pub fn demo12() {
         let text = "hello world the world";
         let mut m = HashMap::new();

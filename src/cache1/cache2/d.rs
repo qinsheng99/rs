@@ -1,6 +1,8 @@
+#[allow(dead_code)]
 pub fn dd() {
     println!("dd")
 }
+#[allow(dead_code)]
 pub fn get_func(n: i32) -> fn(i32) -> i32 {
     fn inc(n: i32) -> i32 {
         n + 1
@@ -14,7 +16,7 @@ pub fn get_func(n: i32) -> fn(i32) -> i32 {
         dec
     }
 }
-
+#[allow(dead_code)]
 pub fn highfun() {
     let a = [1,2,3,4,5,6,7];
     let mut b = Vec::<i32>::new();
@@ -23,7 +25,7 @@ pub fn highfun() {
     }
     println!("{:?}", b);
 }
-
+#[allow(dead_code)]
 pub fn mth() {
     #[derive(Debug)]
     struct Person {
@@ -38,7 +40,7 @@ pub fn mth() {
     }
 }
 
-
+#[allow(dead_code)]
     pub fn f(n:i32) ->fn(i32) ->i32 {
         fn inc(n: i32) -> i32 {
             n + 1
@@ -53,9 +55,9 @@ pub fn mth() {
         }
     }
 
-
+#[allow(dead_code)]
 pub fn inc(n: i32) -> i32 {//函数定义
     n + 1
 }
-
+#[allow(dead_code)]
 pub type IncType = fn(i32) -> i32;//函数类型

@@ -14,7 +14,7 @@ impl HH for Circle {//定义结构体实现area
         std::f64::consts::PI * (self.radius * self.radius)
     }
 }
-
+#[allow(dead_code)]
 pub fn trais_demo() {
     let c = Circle {
         x: 0.0f64,

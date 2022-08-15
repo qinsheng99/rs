@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn life_cycle() {
     let mut x: Vec<i32> = vec!(1i32, 2, 3);
 
