@@ -56,3 +56,28 @@ pub fn closure_5() {
 
     assert_eq!(3, answer);
 }
+
+#[allow(dead_code)]
+pub fn closure_6() {
+    fn call_with_one(some_closure: &dyn Fn(i32) -> i32) -> i32 {
+        some_closure(1)
+    }
+
+    fn add(i: i32) ->i32 {
+        i + 2
+    }
+
+    let f = add;
+
+    assert_eq!(3, call_with_one(&f));
+}
+#[allow(dead_code)]
+pub fn closure_7() {
+    fn factory() -> Box<fn(i32) -> i32> {
+        Box::new(|x| x + 2)
+    }
+
+    let f = factory();
+
+    assert_eq!(3,f(1))
+}

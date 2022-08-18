@@ -9,7 +9,7 @@ mod demof;
 // use demof::demo::demo::demofs;
 use directory::{closure};
 fn main() {
-    closure::demo::closure_5()
+    closure::demo::closure_7()
 }
 
 
