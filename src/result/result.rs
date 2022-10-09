@@ -12,7 +12,7 @@ pub fn open1(){
                     panic!("creat file err {:?}", e)
                 }
             },
-            other=> {
+            _other=> {
                 panic!("open file err {:?}", error)
             }
 
@@ -22,7 +22,7 @@ pub fn open1(){
 
 #[allow(dead_code)]
 pub fn open2(){
-    let f = File::open("hello.txt").unwrap_or_else(|error|{
+    let _f = File::open("hello.txt").unwrap_or_else(|error|{
         if error.kind() == ErrorKind::NotFound {
             File::create("hello.txt").unwrap_or_else(|error| {
                 panic!("creat file err {:?}", error)
@@ -33,5 +33,5 @@ pub fn open2(){
     });
 
 
-    let ff  = File::open("").unwrap()
+    let _ff  = File::open("").unwrap();
 }

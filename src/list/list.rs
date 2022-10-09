@@ -68,7 +68,7 @@ pub fn map1() {
 
     println!("{:?}", l)
 }
-#[allow(dead_code)]
-pub fn iter(){
-    IntoIterator::into_iter()
-}
+// #[allow(dead_code)]
+// pub fn iter(){
+//     IntoIterator::into_iter()
+// }
