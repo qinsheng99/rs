@@ -10,9 +10,10 @@ mod result;
 // use cache1::cache2::d;
 // use demof::demo::demo::demofs;
 // use directory::{closure};
-use list::list::map1;
+use traits::trais_demo;
+use list::vec::{v ,z,e};
 fn main() {
-    map1()
+   trais_demo()
 }
 
 

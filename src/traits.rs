@@ -19,7 +19,7 @@ pub fn trais_demo() {
     let c = Circle {
         x: 0.0f64,
         y: 0.0f64,
-        radius: 1.0f64,
+        radius: 2.0,
     };
     println!("circle c has an area of {}", c.area());
 }
