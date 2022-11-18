@@ -23,26 +23,26 @@ pub mod demofs {
 #[derive(Debug)]
 struct Color(i32, i32);
 
-#[derive(Debug)]
-enum IpAddrKind{
-    V4(String),
-    V6(String),
-}
+// #[derive(Debug)]
+// enum IpAddrKind{
+//     V4(String),
+//     V6(String),
+// }
 
-enum Coin {
-    A,
-    B,
-    C,
-}
-
-#[allow(dead_code)]
-fn demo9(c :Coin) ->u64{
-    match c {
-        Coin::A => 1,
-        Coin::B=> 2,
-        Coin::C=>3,
-    }
-}
+// enum Coin {
+//     A,
+//     B,
+//     C,
+// }
+//
+// #[allow(dead_code)]
+// fn demo9(c :Coin) ->u64{
+//     match c {
+//         Coin::A => 1,
+//         Coin::B=> 2,
+//         Coin::C=>3,
+//     }
+// }
 
 #[allow(dead_code)]
 fn demo10(o:Option<i32>) -> Option<i32> {

@@ -19,7 +19,7 @@ pub fn z(){
 
     println!("{:?}", v3)
 }
-
+#[allow(dead_code)]
 pub fn e(){
     let v = vec![1, 2, 3, 4, 5, 6];
     let val = v.iter()
@@ -28,7 +28,7 @@ pub fn e(){
         .filter(|&(idx, _)| idx % 2 == 0)
         // 将下标去除,如果调用unzip获得最后结果的话，可以调用下面这句，终止链式调用
         // .unzip::<_,_, vec<_>, vec<_>>().1
-        .map(|(idx, val)| val)
+        .map(|(_idx, val)| val)
         // 累加 1+3+5 = 9
         .fold(0, |sum, acm| sum + acm);
 
