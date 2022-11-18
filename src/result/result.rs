@@ -3,7 +3,7 @@ use std::io::ErrorKind;
 #[allow(dead_code)]
 pub fn open1(){
     let f = File::open("hello.txt");
-    let f = match f {
+    let _f = match f {
         Ok(file) => file,
         Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::create("hello.txt") {
