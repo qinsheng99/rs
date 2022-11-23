@@ -12,9 +12,9 @@ mod grammar;
 // use demof::demo::demo::demofs;
 // use directory::{closure};
 // use list::vec::{v ,z,e};
-use grammar::{form::form_demo};
+use grammar::{compound_type::compound_type};
 fn main() {
-   form_demo()
+   compound_type();
 }
 
 

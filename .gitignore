@@ -10,3 +10,5 @@ Cargo.lock
 **/*.rs.bk
 .idea
 hello.txt
+.DS_Store
+push.sh
