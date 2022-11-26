@@ -1,20 +1,34 @@
 mod cache;
-mod cache1;
-mod english;
 mod traits;
 mod directory;
 mod demof;
 mod list;
 mod result;
 mod grammar;
-// use std::io::Write;
-// use cache1::cache2::d;
-// use demof::demo::demo::demofs;
-// use directory::{closure};
-// use list::vec::{v ,z,e};
-use grammar::{compound_type::compound_type};
+use grammar::{compound_type::compound_type_practice};
+use clap::{Parser};
+use crate::traits::N;
+
+#[derive(Parser)]
+struct CLi {
+   #[arg(short, long)]
+   path:Option<String>
+}
 fn main() {
-   compound_type();
+   compound_type_practice();
+
+   let args = CLi::parse();
+   let _p:() = match args.path {
+      Some(p) => println!("{}", p),
+      None => ()
+   };
+
+   // let mut c = traits::new();
+   //
+   // c._set("zbc");
+
+   crate::traits::method();
+
 }
 
 

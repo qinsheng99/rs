@@ -3,6 +3,11 @@ pub trait HH {
     fn area(&self) -> f64;
 }
 
+
+pub trait N {
+    fn _set(&mut self,_: &str);
+}
+
 pub struct Circle {
     pub x: f64,
     pub y: f64,
@@ -22,6 +27,21 @@ pub fn trais_demo() {
         radius: 2.0,
     };
     println!("circle c has an area of {}", c.area());
+}
+
+pub struct Cache {
+    pub path: String
+}
+
+#[allow(dead_code)]
+pub const fn new() -> Cache {
+    Cache{ path: String::new() }
+}
+
+impl N for Cache {
+    fn _set(&mut self,_key: &str) {
+        self.path = _key.to_string()
+    }
 }
 
 trait Foo {
@@ -57,9 +77,6 @@ impl Add for Point {
         }
     }
 }
-// let p1 = Point{x: 1, y: 1};
-// let p2 = Point{x: 2, y: 2};
-// println!("{:?}", add(p1+p2, p2));
 
 #[derive(Debug)]
 struct Point1<T: Add<T, Output = T>> { //限制类型T必须实现了Add trait，否则无法进行+操作。
@@ -78,20 +95,22 @@ impl<T: Add<T, Output = T>> Add for Point1<T> {
     }
 }
 
-// trait Foo { fn method(&self) -> String; }
+trait Method { fn method(&self) -> String; }
 
-// impl Foo for u8 { fn method(&self) -> String { format!("u8: {}", *self) } }
-// impl Foo for String { fn method(&self) -> String { format!("string: {}", *self) } }
+impl Method for u8 { fn method(&self) -> String { format!("u8: {}", *self) } }
+impl Method for String { fn method(&self) -> String { format!("string: {}", *self) } }
 
-// use std::ops::Add;
+#[allow(dead_code)]
+fn add<T: Add<T, Output=T>>(a:T, b:T) -> T {
+    a + b
+}
 
-// fn add<T: Add<T, Output=T>>(a:T, b:T) -> T {
-//     a + b
-// }
+#[allow(dead_code)]
+pub fn method(){
+    let x = "Hello".to_string();
+    println!("x--{}", x.method());
+    let y:u8 = 8;
+    println!("y--{}", y.method());
 
-// let x = "Hello".to_string();
-//     println!("x--{}", x.method());
-//     let y = 8u8;
-//     println!("y--{}", y.method());
-
-//     println!("5 + 6 = {}", add(5, 6));
+    println!("5 + 6 = {}", add(5, 6));
+}
