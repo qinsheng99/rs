@@ -22,6 +22,4 @@ fn main() {
         Some(p) => println!("{}", p),
         None => (),
     };
-
-    trais_demo()
 }
