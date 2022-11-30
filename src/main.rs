@@ -5,9 +5,9 @@ mod demof;
 mod list;
 mod result;
 mod grammar;
-use grammar::{compound_type::compound_type_practice};
+use grammar::{compound_type::compound_type_match};
 use clap::{Parser};
-use crate::traits::N;
+// use crate::traits::N;
 
 #[derive(Parser)]
 struct CLi {
@@ -15,19 +15,13 @@ struct CLi {
    path:Option<String>
 }
 fn main() {
-   compound_type_practice();
+   compound_type_match();
 
    let args = CLi::parse();
    let _p:() = match args.path {
       Some(p) => println!("{}", p),
       None => ()
    };
-
-   // let mut c = traits::new();
-   //
-   // c._set("zbc");
-
-   crate::traits::method();
 
 }
 
