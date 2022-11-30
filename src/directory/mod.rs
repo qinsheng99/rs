@@ -1,2 +1,2 @@
-pub mod life_cycle;
 pub mod closure;
+pub mod life_cycle;

@@ -1,7 +1,6 @@
-
 const MAX: u32 = 100_000;
 #[allow(dead_code)]
-pub fn variable_demo(){
+pub fn variable_demo() {
     let f = "hello";
     println!("{}", f);
     println!("{}", MAX);
@@ -15,5 +14,4 @@ pub fn variable_demo(){
         println!("{}", x)
     }
     println!("{}", x);
-    
 }

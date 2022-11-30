@@ -1,29 +1,27 @@
 mod cache;
-mod traits;
-mod directory;
 mod demof;
+mod directory;
+mod grammar;
 mod list;
 mod result;
-mod grammar;
-use grammar::{compound_type::compound_type_match};
-use clap::{Parser};
-// use crate::traits::N;
+mod traits;
+use crate::traits::trais_demo;
+use clap::Parser;
+use grammar::generic::generic;
 
 #[derive(Parser)]
 struct CLi {
-   #[arg(short, long)]
-   path:Option<String>
+    #[arg(short, long)]
+    path: Option<String>,
 }
 fn main() {
-   compound_type_match();
+    generic();
 
-   let args = CLi::parse();
-   let _p:() = match args.path {
-      Some(p) => println!("{}", p),
-      None => ()
-   };
+    let args = CLi::parse();
+    let _p: () = match args.path {
+        Some(p) => println!("{}", p),
+        None => (),
+    };
 
+    trais_demo()
 }
-
-
-

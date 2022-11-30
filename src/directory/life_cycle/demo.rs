@@ -1,6 +1,6 @@
 #[allow(dead_code)]
 pub fn life_cycle() {
-    let mut x: Vec<i32> = vec!(1i32, 2, 3);
+    let mut x: Vec<i32> = vec![1i32, 2, 3];
 
     //更新数组
     //push中对数组进行了可变借用，并在push函数退出时销毁这个借用
@@ -18,7 +18,6 @@ pub fn life_cycle() {
 
         println!("{:?}", z); //打印: [1, 2, 3, 10, 100, 1000]
     } //y和z在此处被销毁，并释放借用。
-
 
     //访问x正常
     println!("{:?}", x); //打印: [1, 2, 3, 10, 100, 1000]

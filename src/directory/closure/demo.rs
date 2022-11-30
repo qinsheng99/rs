@@ -1,6 +1,6 @@
 #[allow(dead_code)]
 pub fn plus_one() {
-    let plus = |x :i64| x + 2;
+    let plus = |x: i64| x + 2;
     println!("plus---{}", plus(3));
 }
 #[allow(dead_code)]
@@ -12,12 +12,11 @@ pub fn closure_1() {
     println!("{:?}", takes_nums());
 }
 #[allow(dead_code)]
-pub fn closure_2(){
-
+pub fn closure_2() {
     let mut num = 5;
     {
         let mut add_num = |x: i32| num += x;
-    
+
         add_num(5);
     }
     println!("num = {}", num)
@@ -36,8 +35,9 @@ pub fn closure_2(){
 #[allow(dead_code)]
 pub fn closure_4() {
     fn call_with_one<F>(some_closure: F) -> i32
-        where F : Fn(i32) -> i32 {
-
+    where
+        F: Fn(i32) -> i32,
+    {
         some_closure(1)
     }
 
@@ -63,7 +63,7 @@ pub fn closure_6() {
         some_closure(1)
     }
 
-    fn add(i: i32) ->i32 {
+    fn add(i: i32) -> i32 {
         i + 2
     }
 
@@ -79,5 +79,5 @@ pub fn closure_7() {
 
     let f = factory();
 
-    assert_eq!(3,f(1))
+    assert_eq!(3, f(1))
 }

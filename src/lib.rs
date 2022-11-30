@@ -1,12 +1,10 @@
 mod japanese {
-    mod greetings {
-    }
+    mod greetings {}
 
-    mod farewells {
-    }
+    mod farewells {}
 }
 #[allow(dead_code)]
-fn five(){}
+fn five() {}
 pub mod first {
     pub mod second {
         pub fn third() {
@@ -19,7 +17,7 @@ pub mod first {
     }
 }
 #[allow(dead_code)]
-pub fn forth(){
+pub fn forth() {
     crate::first::second::third();
 }
 

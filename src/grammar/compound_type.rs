@@ -1,10 +1,10 @@
 #[allow(dead_code)]
-pub fn compound_type(){
+pub fn compound_type() {
     let f = String::from("hello world".to_string());
     let h = &f[0..5];
     let w = &f[6..11];
 
-    println!("{}-{}", h,w);
+    println!("{}-{}", h, w);
 
     let s = String::from("hello".to_string());
     let word = first(&s);
@@ -20,37 +20,36 @@ pub fn compound_type(){
     str.insert(str.len(), '!');
     str.insert_str(str.len(), "!!!");
 
-    str.pop();  //删除并返回字符串的最后一个字符
-    str.remove(str.len() - 1);    //删除并返回字符串中指定位置的字符
+    str.pop(); //删除并返回字符串的最后一个字符
+    str.remove(str.len() - 1); //删除并返回字符串中指定位置的字符
     str.truncate(100); //删除字符串中从指定位置开始到结尾的全部字符
-    println!("{}",str.replace("h", "H"));
+    println!("{}", str.replace("h", "H"));
     println!("{}", str);
 
     let s1 = String::from("a");
     let s2 = String::from("b");
 
-    println!("{}",s1 + &s2);
-
+    println!("{}", s1 + &s2);
 }
 
-fn first(s: &String) -> &str{
+fn first(s: &String) -> &str {
     &s[..1]
 }
 
 #[allow(dead_code)]
-pub fn compound_type_practice(){
+pub fn compound_type_practice() {
     let mut s1 = String::new();
     push(&mut s1, "hello");
     println!("{}", s1);
 }
 
-fn push(s: &mut String, p: &str){
+fn push(s: &mut String, p: &str) {
     s.push_str(p)
 }
 
 #[allow(dead_code)]
-pub fn compound_type_tuple(){
-    let tup:(i32,i32) = (1,2);
+pub fn compound_type_tuple() {
+    let tup: (i32, i32) = (1, 2);
     println!("{}", tup.1);
 
     let s = String::from("hello");
@@ -58,7 +57,7 @@ pub fn compound_type_tuple(){
     println!("{:?}", tuple_string(s));
 }
 
-fn tuple_string(s:String) -> (String, usize){
+fn tuple_string(s: String) -> (String, usize) {
     let l = s.len();
     (s, l)
 }
@@ -66,25 +65,22 @@ fn tuple_string(s:String) -> (String, usize){
 #[derive(Debug)]
 #[allow(dead_code)]
 struct User {
-    name:String,
-    age:i32,
+    name: String,
+    age: i32,
 }
 
-fn new_user(s:String,a:i32)-> User {
-    User {
-        name:s,
-        age:a,
-    }
+fn new_user(s: String, a: i32) -> User {
+    User { name: s, age: a }
 }
 
 #[allow(dead_code)]
-pub fn compound_type_struct(){
+pub fn compound_type_struct() {
     let u = new_user(String::from("a"), 21);
     println!("{:?}", u);
 
-    let u1 = User{
+    let u1 = User {
         // name:String::from("123"),
-        age:19,
+        age: 19,
         ..u
     };
 
@@ -101,15 +97,15 @@ enum PokerSuit {
 }
 
 #[allow(dead_code)]
-pub fn compound_type_enum(){
-    let cl:PokerSuit = PokerSuit::Clubs(9);
-    let sp:PokerSuit = PokerSuit::Spades('9');
+pub fn compound_type_enum() {
+    let cl: PokerSuit = PokerSuit::Clubs(9);
+    let sp: PokerSuit = PokerSuit::Spades('9');
     println!("{:?}", cl);
     println!("{:?}", sp);
 }
 
 #[allow(dead_code)]
-pub fn compound_type_array(){
+pub fn compound_type_array() {
     let a: [i32; 5] = [1, 2, 3, 4, 5];
     println!("{:?}", a);
 
@@ -130,7 +126,7 @@ pub fn compound_type_array(){
     let mut n = 0;
     while n < 1 {
         println!("{}", n);
-        n+=1
+        n += 1
     }
 }
 
@@ -141,23 +137,24 @@ enum Action {
 }
 
 #[allow(dead_code)]
-pub fn compound_type_match(){
+pub fn compound_type_match() {
     let actions = [
         Action::Say("Hello Rust".to_string()),
-        Action::MoveTo(1,2),
-        Action::ChangeColorRGB(255,255,0),
+        Action::MoveTo(1, 2),
+        Action::ChangeColorRGB(255, 255, 0),
     ];
     for action in actions {
         match action {
             Action::Say(s) => {
                 println!("{}", s);
-            },
+            }
             Action::MoveTo(x, y) => {
                 println!("point from (0, 0) move to ({}, {})", x, y);
-            },
+            }
             Action::ChangeColorRGB(r, g, _) => {
-                println!("change color into '(r:{}, g:{}, b:0)', 'b' has been ignored",
-                         r, g,
+                println!(
+                    "change color into '(r:{}, g:{}, b:0)', 'b' has been ignored",
+                    r, g,
                 );
             }
         }
@@ -166,10 +163,10 @@ pub fn compound_type_match(){
     #[derive(Debug)]
     enum MyEnum {
         Foo,
-        Bar
+        Bar,
     }
-    let v = vec![MyEnum::Foo,MyEnum::Bar,MyEnum::Foo];
-    let vv = v.iter().filter(|x|matches!(x, MyEnum::Foo));
+    let v = vec![MyEnum::Foo, MyEnum::Bar, MyEnum::Foo];
+    let vv = v.iter().filter(|x| matches!(x, MyEnum::Foo));
     println!("{:?}", vv);
 
     enum Message {
@@ -179,14 +176,16 @@ pub fn compound_type_match(){
     let msg = Message::Hello { id: 5 };
 
     match msg {
-        Message::Hello { id: id_variable @ 3..=7 } => {
+        Message::Hello {
+            id: id_variable @ 3..=7,
+        } => {
             println!("Found an id in range: {}", id_variable)
-        },
+        }
         Message::Hello { id: 10..=12 } => {
             println!("Found an id in another range")
-        },
+        }
         Message::Hello { id } => {
             println!("Found some other id: {}", id)
-        },
+        }
     }
 }
