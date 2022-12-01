@@ -89,8 +89,44 @@ fn p2(item: &dyn Print) {
     item.print()
 }
 
+#[allow(dead_code)]
 pub fn trait_object() {
     let j: u32 = 10;
     p1(Box::new(10u8));
     p2(&j)
+}
+
+pub fn same_name_trait() {
+    trait A {
+        fn print() -> String;
+    }
+
+    trait B {
+        fn print(&self) -> String;
+    }
+
+    struct C;
+
+    impl C {
+        fn print() -> String {
+            String::from("C")
+        }
+    }
+
+    impl A for C {
+        fn print() -> String {
+            String::from("A")
+        }
+    }
+
+    impl B for C {
+        fn print(&self) -> String {
+            String::from("B")
+        }
+    }
+
+    let c = C;
+    println!("{}", C::print());
+    println!("{}", B::print(&c));
+    println!("{}", <C as A>::print());
 }

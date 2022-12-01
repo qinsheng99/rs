@@ -6,7 +6,7 @@ mod list;
 mod result;
 mod traits;
 use clap::Parser;
-use grammar::traits::trait_object;
+use grammar::traits::same_name_trait;
 
 #[derive(Parser)]
 struct CLi {
@@ -14,8 +14,8 @@ struct CLi {
     path: Option<String>,
 }
 fn main() {
-    trait_object();
-    crate::traits::addm();
+    same_name_trait();
+    // crate::traits::addm();
 
     let args = CLi::parse();
     let _p: () = match args.path {
