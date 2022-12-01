@@ -131,3 +131,24 @@ pub fn method() {
 
     println!("5 + 6 = {}", add(5, 6));
 }
+
+#[derive(Debug)]
+struct Millimeters(u32);
+#[derive(Debug)]
+struct Meters(u32);
+
+impl Add<Meters> for Millimeters {
+    type Output = Millimeters;
+
+    fn add(self, other: Meters) -> Self::Output {
+        Millimeters(self.0 + (other.0 * 1000))
+    }
+}
+
+#[allow(dead_code)]
+pub fn addm() {
+    let a = Millimeters(10);
+    let b = Meters(20);
+    let c = a + b;
+    println!("{:?}", c);
+}

@@ -15,6 +15,7 @@ struct CLi {
 }
 fn main() {
     trait_object();
+    crate::traits::addm();
 
     let args = CLi::parse();
     let _p: () = match args.path {
