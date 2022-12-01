@@ -5,9 +5,8 @@ mod grammar;
 mod list;
 mod result;
 mod traits;
-use crate::traits::trais_demo;
 use clap::Parser;
-use grammar::generic::generic;
+use grammar::traits::trait_object;
 
 #[derive(Parser)]
 struct CLi {
@@ -15,7 +14,7 @@ struct CLi {
     path: Option<String>,
 }
 fn main() {
-    generic();
+    trait_object();
 
     let args = CLi::parse();
     let _p: () = match args.path {
