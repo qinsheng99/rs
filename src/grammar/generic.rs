@@ -7,6 +7,7 @@ pub fn generic() {
     let p3 = p1.mix(p2);
     println!("{:?}", p3);
 }
+
 fn add<T: std::ops::Add<Output = T>>(a: T, b: T) -> T {
     a + b
 }
@@ -25,4 +26,9 @@ impl<T, U> Point<T, U> {
             y: other.y,
         }
     }
+}
+
+#[allow(dead_code)]
+fn arr<T: std::fmt::Debug, const N: usize>(arr: &[T; N]) {
+    println!("{:?}", arr);
 }
