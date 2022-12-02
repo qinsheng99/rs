@@ -96,6 +96,7 @@ pub fn trait_object() {
     p2(&j)
 }
 
+#[allow(dead_code)]
 pub fn same_name_trait() {
     trait A {
         fn print() -> String;
@@ -108,6 +109,7 @@ pub fn same_name_trait() {
     struct C;
 
     impl C {
+        #[allow(dead_code)]
         fn print() -> String {
             String::from("C")
         }

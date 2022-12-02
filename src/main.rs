@@ -6,7 +6,7 @@ mod list;
 mod result;
 mod traits;
 use clap::Parser;
-use grammar::traits::same_name_trait;
+use grammar::compound_type::type_conversion;
 
 #[derive(Parser)]
 struct CLi {
@@ -14,7 +14,7 @@ struct CLi {
     path: Option<String>,
 }
 fn main() {
-    same_name_trait();
+    type_conversion();
     // crate::traits::addm();
 
     let args = CLi::parse();

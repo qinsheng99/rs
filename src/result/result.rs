@@ -1,5 +1,6 @@
 use std::fs::File;
-use std::io::ErrorKind;
+use std::io::{ErrorKind, Read};
+use std::{fs, io};
 #[allow(dead_code)]
 pub fn open1() {
     let f = File::open("hello.txt");
@@ -30,4 +31,31 @@ pub fn open2() {
     });
 
     let _ff = File::open("").unwrap();
+}
+
+#[allow(dead_code)]
+fn read_username_from_file1() -> Result<String, io::Error> {
+    let mut f = File::open("hello.txt")?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
+}
+
+#[allow(dead_code)]
+fn open_file() -> Result<File, Box<dyn std::error::Error>> {
+    let mut f = File::open("hello.txt")?;
+    Ok(f)
+}
+
+#[allow(dead_code)]
+fn read_username_from_file2() -> Result<String, io::Error> {
+    let mut s = String::new();
+
+    File::open("hello.txt")?.read_to_string(&mut s)?;
+
+    Ok(s)
+}
+
+fn read_username_from_file() -> Result<String, io::Error> {
+    fs::read_to_string("hello.txt")
 }
