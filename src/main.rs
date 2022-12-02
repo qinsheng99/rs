@@ -6,7 +6,7 @@ mod list;
 mod result;
 mod traits;
 use clap::Parser;
-use grammar::compound_type::type_conversion;
+use grammar::life_cycle;
 
 #[derive(Parser)]
 struct CLi {
@@ -14,7 +14,7 @@ struct CLi {
     path: Option<String>,
 }
 fn main() {
-    type_conversion();
+    life_cycle();
     // crate::traits::addm();
 
     let args = CLi::parse();

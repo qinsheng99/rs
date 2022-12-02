@@ -43,7 +43,7 @@ fn read_username_from_file1() -> Result<String, io::Error> {
 
 #[allow(dead_code)]
 fn open_file() -> Result<File, Box<dyn std::error::Error>> {
-    let mut f = File::open("hello.txt")?;
+    let f = File::open("hello.txt")?;
     Ok(f)
 }
 
@@ -56,6 +56,7 @@ fn read_username_from_file2() -> Result<String, io::Error> {
     Ok(s)
 }
 
+#[allow(dead_code)]
 fn read_username_from_file() -> Result<String, io::Error> {
     fs::read_to_string("hello.txt")
 }
