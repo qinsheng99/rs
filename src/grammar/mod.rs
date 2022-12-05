@@ -1,11 +1,11 @@
-pub mod compound_type;
-pub mod form;
-pub mod format;
-pub mod generic;
+mod compound_type;
+mod form;
+mod format;
+mod generic;
 mod life_cycle;
-pub mod traits;
-pub mod variable;
-pub mod vec;
+mod traits;
+mod variable;
+mod vec;
 use life_cycle::max_str;
 
 #[allow(dead_code)]
