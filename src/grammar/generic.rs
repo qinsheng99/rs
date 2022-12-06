@@ -6,6 +6,13 @@ pub fn generic() {
     let p2 = Point { x: 1.1, y: 2.2 };
     let p3 = p1.mix(p2);
     println!("{:?}", p3);
+
+    let mut p = Point { x: 0, y: 0 };
+    let r = &mut p;
+    let rr = &*r;
+    println!("{:?}", rr);
+    r.move_data(10, 10);
+    println!("{:?}", r);
 }
 
 fn add<T: std::ops::Add<Output = T>>(a: T, b: T) -> T {
@@ -25,6 +32,11 @@ impl<T, U> Point<T, U> {
             x: self.x,
             y: other.y,
         }
+    }
+
+    fn move_data(&mut self, x: T, y: U) {
+        self.x = x;
+        self.y = y;
     }
 }
 
