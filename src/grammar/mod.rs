@@ -1,12 +1,14 @@
-mod compound_type;
-mod form;
-mod format;
-mod generic;
+pub mod compound_type;
+pub mod form;
+pub mod format;
+pub mod generic;
 pub mod life_cycle;
-mod traits;
-mod variable;
-mod vec;
+pub mod static_gra;
+pub mod traits;
+pub mod variable;
+pub mod vec;
 use life_cycle::max_str;
+use static_gra::static_ as s;
 
 #[allow(dead_code)]
 pub fn life_cycle() {
@@ -22,4 +24,8 @@ pub fn life_cycle() {
     //     cc = max_str(aa, bb.as_str()); // life 12-13  cc:9-15
     // }
     // println!("{}", cc); //build err
+}
+
+pub fn static_() {
+    s()
 }

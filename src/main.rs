@@ -7,6 +7,8 @@ use clap::Parser;
 use grammar::life_cycle;
 #[allow(unused_imports)]
 use grammar::life_cycle::life;
+#[allow(unused_imports)]
+use grammar::static_;
 use rust::Config;
 
 mod cache;
@@ -24,8 +26,8 @@ struct CLi {
 
 fn main() {
     // life_cycle();
-    life();
-    args()
+    static_();
+    // args()
 }
 
 #[allow(dead_code)]
