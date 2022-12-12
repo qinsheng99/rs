@@ -2,7 +2,7 @@ mod compound_type;
 mod form;
 mod format;
 mod generic;
-mod life_cycle;
+pub mod life_cycle;
 mod traits;
 mod variable;
 mod vec;

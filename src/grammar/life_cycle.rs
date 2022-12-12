@@ -9,11 +9,6 @@ pub fn max_str<'a>(s1: &'a str, s2: &'a str) -> &'a str {
     }
 }
 
-#[allow(dead_code)]
-fn life<'a: 'b, 'b>(_a: &'a str, b: &'b str) -> &'b str {
-    b
-}
-
 #[derive(Debug)]
 #[allow(dead_code)]
 struct A<'a> {
@@ -103,3 +98,45 @@ fn foo1<'a, 'b: 'a>(x: &'a str, y: &'b str) -> &'a str {
 
 //     条件： 'a ⊆ 'b
 //     推导：'a ⊆ ('a ∩ 'b) // 成立
+
+// #[derive(Debug)]
+#[allow(dead_code)]
+struct Manager<'a> {
+    path: &'a str,
+}
+#[allow(dead_code)]
+struct List<'a> {
+    manage: Manager<'a>,
+}
+#[allow(dead_code)]
+struct Inter<'a: 'b, 'b> {
+    manager: &'b mut Manager<'a>,
+}
+impl<'a> List<'a> {
+    pub fn inter<'b>(&'b mut self) -> Inter<'a, 'b>
+    where
+        'a: 'b,
+    {
+        Inter {
+            manager: &mut self.manage,
+        }
+    }
+}
+impl<'a: 'b, 'b> Inter<'a, 'b> {
+    pub fn print(self) {
+        println!("print")
+    }
+}
+
+#[allow(dead_code)]
+pub fn life() {
+    let mut list: List = List {
+        manage: Manager { path: "hello" },
+    };
+    list.inter().print();
+    use_list(&list);
+}
+
+fn use_list(list: &List) {
+    println!("{}", list.manage.path);
+}
