@@ -1,4 +1,8 @@
-use std::{slice::from_raw_parts, str::from_utf8_unchecked};
+use std::{
+    fmt::{Debug, Display},
+    slice::from_raw_parts,
+    str::from_utf8_unchecked,
+};
 
 fn get_memory_location() -> (usize, usize) {
     // “Hello World” 是字符串字面量，因此它的生命周期是 `'static`.
@@ -25,4 +29,10 @@ pub fn static_() {
     );
     // 如果大家想知道为何处理裸指针需要 `unsafe`，可以试着反注释以下代码
     // let message = get_str_at_location(1000, 10);
+    let i = 5;
+    print_it(i)
+}
+
+fn print_it<T: Debug + Display + 'static>(input: T) {
+    println!("'static value passed in is: {:?}", input);
 }

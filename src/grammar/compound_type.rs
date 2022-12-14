@@ -1,3 +1,5 @@
+use std::fmt::{Debug, Formatter};
+
 #[allow(dead_code)]
 pub fn compound_type() {
     let f = String::from("hello world".to_string());
@@ -204,4 +206,20 @@ pub fn type_conversion() {
         *p2 += 1;
     }
     assert_eq!(values[1], 3);
+}
+
+struct DeBug<'a> {
+    id: &'a String,
+}
+
+impl<'a> Debug for DeBug<'a> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("").field("id", self.id).finish()
+    }
+}
+
+pub fn debug() {
+    let d = String::from("123");
+    let de = DeBug { id: &d };
+    println!("{:?}", de);
 }

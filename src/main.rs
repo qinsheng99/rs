@@ -9,6 +9,8 @@ use grammar::life_cycle;
 use grammar::life_cycle::life;
 #[allow(unused_imports)]
 use grammar::static_;
+
+use grammar::compound_type::debug;
 use rust::Config;
 
 mod cache;
@@ -27,6 +29,7 @@ struct CLi {
 fn main() {
     // life_cycle();
     static_();
+    debug()
     // args()
 }
 
