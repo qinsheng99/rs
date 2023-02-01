@@ -4,15 +4,16 @@ use std::process;
 use clap::Parser;
 
 #[allow(unused_imports)]
+use grammar::compound_type::debug;
+#[allow(unused_imports)]
 use grammar::life_cycle;
 #[allow(unused_imports)]
 use grammar::life_cycle::life;
 #[allow(unused_imports)]
 use grammar::static_;
-
-use grammar::compound_type::debug;
 use rust::Config;
 
+mod _trait;
 mod cache;
 mod demof;
 mod directory;
@@ -28,9 +29,11 @@ struct CLi {
 
 fn main() {
     // life_cycle();
-    static_();
-    debug()
+    // static_();
+    // debug()
     // args()
+
+    _trait::debug::debug()
 }
 
 #[allow(dead_code)]

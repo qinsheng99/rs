@@ -266,4 +266,3 @@ pub fn addm() {
     let c = a + b;
     println!("{:?}", c);
 }
-

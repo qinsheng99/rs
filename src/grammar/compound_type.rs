@@ -218,6 +218,7 @@ impl<'a> Debug for DeBug<'a> {
     }
 }
 
+#[allow(dead_code)]
 pub fn debug() {
     let d = String::from("123");
     let de = DeBug { id: &d };

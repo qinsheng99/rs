@@ -26,6 +26,7 @@ pub fn life_cycle() {
     // println!("{}", cc); //build err
 }
 
+#[allow(dead_code)]
 pub fn static_() {
     s()
 }
