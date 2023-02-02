@@ -1,23 +1,23 @@
-use serde::ser::{Serialize, SerializeStruct};
-use serde::{Deserialize, Serializer};
+// use serde::ser::{Serialize, SerializeStruct};
+use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize)]
+#[derive(Serialize, Deserialize)]
 struct J {
     pub id: i32,
     pub name: String,
 }
 
-impl Serialize for J {
-    fn serialize<T>(&self, serializer: T) -> Result<T::Ok, T::Error>
-    where
-        T: Serializer,
-    {
-        let mut s = serializer.serialize_struct("J", 2)?;
-        s.serialize_field("id", &self.id)?;
-        s.serialize_field("name", &self.name)?;
-        s.end()
-    }
-}
+// impl Serialize for J {
+//     fn serialize<T>(&self, serializer: T) -> Result<T::Ok, T::Error>
+//     where
+//         T: Serializer,
+//     {
+//         let mut s = serializer.serialize_struct("J", 2)?;
+//         s.serialize_field("id", &self.id)?;
+//         s.serialize_field("name", &self.name)?;
+//         s.end()
+//     }
+// }
 
 // impl Deserialize for J<'_> {
 //     fn deserialize<D>(deserializer: D) -> Result<Self, Error> where D: Deserializer<'de> {
