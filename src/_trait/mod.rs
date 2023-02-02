@@ -1,3 +1,4 @@
+pub mod add;
 pub mod debug;
 pub mod display;
 
