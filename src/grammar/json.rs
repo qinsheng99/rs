@@ -36,6 +36,7 @@ pub fn json_marshal() {
     println!("{}", s);
 }
 
+#[allow(dead_code)]
 pub fn json_unmarshal() {
     let a: &'static str = r#"
         {

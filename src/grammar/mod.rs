@@ -9,6 +9,7 @@ pub mod static_gra;
 pub mod traits;
 pub mod variable;
 pub mod vec;
+pub mod iter;
 use life_cycle::max_str;
 use static_gra::static_ as s;
 
