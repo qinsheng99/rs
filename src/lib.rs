@@ -26,35 +26,61 @@ pub fn run(config: Config) -> Result<String, Box<dyn Error>> {
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut v: Vec<&str> = Vec::new();
-    for line in contents.lines() {
-        if line.contains(query) {
-            v.push(line)
-        }
-    }
-    v
+    // let mut v: Vec<&str> = Vec::new();
+    // for line in contents.lines() {
+    //     if line.contains(query) {
+    //         v.push(line)
+    //     }
+    // }
+    // v
+
+    contents.lines().filter(|x| x.contains(query)).collect()
 }
 
 pub fn case_search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut v: Vec<&str> = Vec::new();
+    // let mut v: Vec<&str> = Vec::new();
     let query = query.to_lowercase();
-    for line in contents.lines() {
-        if line.to_lowercase().contains(&query) {
-            v.push(line)
-        }
-    }
-    v
+    // for line in contents.lines() {
+    //     if line.to_lowercase().contains(&query) {
+    //         v.push(line)
+    //     }
+    // }
+    // v
+
+    contents
+        .lines()
+        .filter(|x| x.to_lowercase().contains(&query))
+        .collect()
 }
 
+// impl Config {
+//     pub fn new(args: &[String]) -> Result<Config, &'static str> {
+//         if args.len() < 3 {
+//             return Err("args err");
+//         }
+//
+//         let query: String = args[1].clone();
+//         let filename: String = args[2].clone();
+//         let case = env::var("CASE").is_ok();
+//         Ok(Config {
+//             text: query,
+//             path: filename,
+//             case,
+//         })
+//     }
+// }
+
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
+    pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
         if args.len() < 3 {
             return Err("args err");
         }
+        args.next();
 
-        let query: String = args[1].clone();
-        let filename: String = args[2].clone();
-        let case = env::var("CASE").is_ok();
+        let query: String = args.next().unwrap();
+        let filename: String = args.next().unwrap();
+
+        let case = env::var("DB_HOST").is_ok();
         Ok(Config {
             text: query,
             path: filename,

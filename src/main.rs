@@ -6,6 +6,8 @@ use clap::Parser;
 #[allow(unused_imports)]
 use grammar::compound_type::debug;
 #[allow(unused_imports)]
+use grammar::iter::shoes;
+#[allow(unused_imports)]
 use grammar::life_cycle;
 #[allow(unused_imports)]
 use grammar::life_cycle::life;
@@ -41,9 +43,19 @@ fn main() {
 
 #[allow(dead_code)]
 fn args() {
-    let args: Vec<String> = env::args().collect();
+    // let args: Vec<String> = env::args().collect();
+    //
+    // let config = Config::new(&args).unwrap_or_else(|err| {
+    //     println!("err is {}", err);
+    //     process::exit(1);
+    // });
+    //
+    // if let Err(err) = rust::run(config) {
+    //     println!("err is {:?}", err);
+    //     process::exit(1);
+    // }
 
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
         println!("err is {}", err);
         process::exit(1);
     });
