@@ -47,7 +47,7 @@ fn main() {
 
     // grammar::iter::iter()
     // args()
-    smart_pointer::rc::rc()
+    smart_pointer::weak::weak()
 }
 
 #[allow(dead_code)]

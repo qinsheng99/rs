@@ -41,6 +41,7 @@ struct Messages {
 }
 
 impl Messages {
+    #[allow(dead_code)]
     fn new() -> Messages {
         Messages {
             data: RefCell::new(vec![]),
