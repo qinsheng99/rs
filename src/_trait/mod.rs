@@ -1,5 +1,6 @@
 pub mod add;
 pub mod debug;
+pub mod deref;
 pub mod display;
 
 #[allow(dead_code)]

@@ -47,7 +47,7 @@ fn main() {
 
     // grammar::iter::iter()
     // args()
-    smart_pointer::weak::weak()
+    smart_pointer::deref::r#box()
 }
 
 #[allow(dead_code)]
