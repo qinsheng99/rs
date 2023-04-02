@@ -23,6 +23,7 @@ mod grammar;
 mod list;
 mod result;
 mod smart_pointer;
+mod thread;
 
 #[derive(Parser)]
 struct CLi {
@@ -47,7 +48,7 @@ fn main() {
 
     // grammar::iter::iter()
     // args()
-    smart_pointer::deref::r#box()
+    thread::test_channels()
 }
 
 #[allow(dead_code)]
