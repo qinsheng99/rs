@@ -48,7 +48,7 @@ fn main() {
 
     // grammar::iter::iter()
     // args()
-    thread::test_channels()
+    thread::mutex::threds_metux()
 }
 
 #[allow(dead_code)]

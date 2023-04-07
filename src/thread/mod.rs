@@ -1,5 +1,6 @@
 use std::{sync::mpsc, thread, time::Duration};
 
+pub mod mutex;
 #[allow(dead_code)]
 pub fn test_thread() {
     let h = thread::spawn(|| {
