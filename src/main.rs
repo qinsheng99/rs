@@ -21,6 +21,7 @@ mod demof;
 mod directory;
 mod grammar;
 mod list;
+mod net_http;
 mod result;
 mod smart_pointer;
 mod thread;
@@ -48,7 +49,9 @@ fn main() {
 
     // grammar::iter::iter()
     // args()
-    thread::mutex::threds_metux()
+    // thread::mutex::threds_metux()
+
+    net_http::server::ser()
 }
 
 #[allow(dead_code)]
