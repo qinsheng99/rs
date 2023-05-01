@@ -25,6 +25,7 @@ mod net_http;
 mod result;
 mod smart_pointer;
 mod thread;
+mod un_safe;
 
 #[derive(Parser)]
 struct CLi {
@@ -39,19 +40,17 @@ fn main() {
     // args()
 
     // _trait::add::add()
-
-    // grammar::json::json_unmarshal();
-    // grammar::json::json_marshal();
-    // grammar::json::json_marshal();
     // fn_()
 
     // shoes()
 
     // grammar::iter::iter()
     // args()
-    // thread::mutex::threds_metux()
+    // thread::mutex::threads_mutex()
 
-    net_http::server::ser()
+    // net_http::server::ser()
+
+    un_safe::unsafe_split()
 }
 
 #[allow(dead_code)]
