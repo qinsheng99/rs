@@ -25,6 +25,7 @@ mod net_http;
 mod result;
 mod smart_pointer;
 mod thread;
+mod un_safe;
 
 #[derive(Parser)]
 struct CLi {
@@ -39,10 +40,6 @@ fn main() {
     // args()
 
     // _trait::add::add()
-
-    // grammar::json::json_unmarshal();
-    // grammar::json::json_marshal();
-    // grammar::json::json_marshal();
     // fn_()
 
     // shoes()
@@ -53,7 +50,9 @@ fn main() {
     let a = std::time::Duration::from_secs(10).as_secs();
     println!("err is {}", 1);
 
-    net_http::server::ser()
+    // net_http::server::ser()
+
+    un_safe::unsafe_split()
 }
 
 #[allow(dead_code)]

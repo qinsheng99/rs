@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-pub fn metux() {
+pub fn mutex() {
     let m = std::sync::Mutex::new(5);
 
     {
@@ -11,7 +11,7 @@ pub fn metux() {
 }
 
 #[allow(dead_code)]
-pub fn threds_metux() {
+pub fn threads_mutex() {
     use std::sync::{Arc, Mutex};
     let c = Arc::new(Mutex::new(0));
     let mut handles = vec![];
