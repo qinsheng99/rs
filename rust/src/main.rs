@@ -50,6 +50,8 @@ fn main() {
     // grammar::iter::iter()
     // args()
     // thread::mutex::threds_metux()
+    let a = std::time::Duration::from_secs(10).as_secs();
+    println!("err is {}", 1);
 
     net_http::server::ser()
 }
