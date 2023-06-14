@@ -15,6 +15,7 @@ use grammar::life_cycle::life;
 use grammar::static_;
 use rust::Config;
 
+mod _macro;
 mod _trait;
 mod cache;
 mod demof;
@@ -47,12 +48,11 @@ fn main() {
     // grammar::iter::iter()
     // args()
     // thread::mutex::threds_metux()
-    let a = std::time::Duration::from_secs(10).as_secs();
-    println!("err is {}", 1);
 
     // net_http::server::ser()
 
-    un_safe::unsafe_split()
+    // un_safe::unsafe_split()
+    _macro::v()
 }
 
 #[allow(dead_code)]
