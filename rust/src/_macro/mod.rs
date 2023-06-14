@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 macro_rules! log {
     ($($x:expr), *) => {
        $(
@@ -10,7 +8,7 @@ macro_rules! log {
 
 macro_rules! map {
     ($($k:expr => $v:expr), *) => {{
-        let mut hmp = HashMap::new();
+        let mut hmp = ::std::collections::HashMap::new();
         $(
             hmp.insert($k,$v);
         )*
