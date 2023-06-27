@@ -1,4 +1,5 @@
 pub mod add;
+pub mod advanced_trait;
 pub mod debug;
 pub mod deref;
 pub mod display;

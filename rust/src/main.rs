@@ -49,10 +49,16 @@ fn main() {
     // args()
     // thread::mutex::threds_metux()
 
+    // let a = std::time::Duration::from_secs(10).as_secs();
+    // println!("err is {}", 1);
+
     // net_http::server::ser()
 
     // un_safe::unsafe_split()
-    _macro::v()
+
+    _macro::v();
+
+    _trait::advanced_trait::f()
 }
 
 #[allow(dead_code)]
